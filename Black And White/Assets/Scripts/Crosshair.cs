@@ -9,29 +9,39 @@ public class Crosshair : MonoBehaviour
     public Transform cam;
     public Image crossHair;
     public GameObject goInteract;
+    public MissionDatabase missionDB;
+    ValidateItem valItem;
+    public MissionManager missionManager;
 
     // Start is called before the first frame update
     void Start()
     {
-
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log(missionDB.currentMission);
         RaycastHit hit;
         if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
-        {
+        {    
+            
             if (hit.transform.CompareTag("InteractItem"))
             {
-                crossHair.color = Color.white;
-                goInteract.SetActive(true);
-
-                if (Input.GetKeyDown(KeyCode.E))
+                valItem = hit.transform.GetComponent<ValidateItem>();
+                if (missionDB.currentMission == valItem.id)
                 {
-                    Destroy(hit.transform.gameObject);
+                    crossHair.color = Color.white;
+                    goInteract.SetActive(true);
+                    
+
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Destroy(hit.transform.gameObject);
+                        missionManager.completeMission();
+                        missionDB.StartNextMission();
+                    }
                 }
             }
             else

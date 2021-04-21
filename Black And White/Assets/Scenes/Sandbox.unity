@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.42344362, g: 0.47082424, b: 0.51312023, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -352,6 +352,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132659732}
   m_CullTransparentMesh: 1
+--- !u!1 &200977561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 200977563}
+  - component: {fileID: 200977562}
+  m_Layer: 0
+  m_Name: MissionDatabase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &200977562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200977561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de69977b3f890f64891c77c07ffb57ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missionsTextList:
+  - Pegue o livro
+  - Abra a porta
+  currentMission: -1
+  missionManager: {fileID: 1403450167}
+--- !u!4 &200977563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200977561}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &333295866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -409,6 +457,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb7d8f93bfd860144b88d289abbf9a6d, type: 3}
+--- !u!1 &417008633 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1403005516184392, guid: b1b9abc705ea34f8da57cbaf61ffbef7, type: 3}
+  m_PrefabInstance: {fileID: 954889279}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &417008638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417008633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7238d1bce73c18142b868c91ff1c5e25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
 --- !u!1 &417899069
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,6 +611,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 417899069}
   m_CullTransparentMesh: 1
+--- !u!1 &434070682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 434070684}
+  - component: {fileID: 434070683}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &434070683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434070682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1daf36f69574648a0a5afe7e820c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstMissionStartTime: 1.5
+  missionDB: {fileID: 200977562}
+--- !u!4 &434070684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434070682}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &579758207
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +804,8 @@ MonoBehaviour:
   cam: {fileID: 1698258103}
   crossHair: {fileID: 1452015257}
   goInteract: {fileID: 132659732}
+  missionDB: {fileID: 200977562}
+  missionManager: {fileID: 1403450167}
 --- !u!1 &1369440698
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,6 +920,7 @@ GameObject:
   - component: {fileID: 1403450166}
   - component: {fileID: 1403450165}
   - component: {fileID: 1403450164}
+  - component: {fileID: 1403450167}
   m_Layer: 5
   m_Name: Mission
   m_TagString: Untagged
@@ -892,6 +1006,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1403450162}
   m_CullTransparentMesh: 1
+--- !u!114 &1403450167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403450162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e39f7b87758d9d448a3f5f0b57dc3712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missionText: {fileID: 417899071}
 --- !u!1 &1452015256
 GameObject:
   m_ObjectHideFlags: 0
